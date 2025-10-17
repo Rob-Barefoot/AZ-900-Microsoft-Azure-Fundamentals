@@ -4,9 +4,6 @@ You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM
 
 In this instance, you're going to use the Azure CLI.
 
->[!IMPORTANT]
->This exercise creates a VM that is used in a later exercise within this module. To avoid leaving a VM running for an extended period of time, it's recommended that you complete the full module in one sitting.
-
 ## Task 1: Create a resource group
 1. Log into the [Azure portal](https://portal.azure.com/?azure-portal=true).
 1. Select the Azure Cloud Shell icon to bring up Cloud Shell.
@@ -102,7 +99,7 @@ In this procedure, you get the IP address for your VM and attempt to access your
         
     4.  Keep this browser tab open for later.
 
-## Task 2: List the current network security group rules
+## Task 5: List the current network security group rules
 
 Your web server wasn't accessible. To find out why, let's examine your current NSG rules.
 
@@ -153,7 +150,7 @@ Your web server wasn't accessible. To find out why, let's examine your current N
 
 By default, a Linux VM's NSG allows network access only on port 22. This port enables administrators to access the system. You need to also allow inbound connections on port 80, which allows access over HTTP.
 
-## Task 3: Create the network security rule
+## Task 6: Create the network security rule
 
 Here, you create a network security rule that allows inbound access on port 80 (HTTP).
 
@@ -190,7 +187,7 @@ Here, you create a network security rule that allows inbound access on port 80 (
     allow-http          100        80      Allow    
     ```
 
-## Task 4: Access your web server again
+## Task 7: Access your web server again
 
 Now that you configured network access to port 80, let's try to access the web server a second time.
 
