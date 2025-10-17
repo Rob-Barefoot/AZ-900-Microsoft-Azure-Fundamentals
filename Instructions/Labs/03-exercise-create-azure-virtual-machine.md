@@ -206,9 +206,6 @@ Now that you configured network access to port 80, let's try to access the web s
     <html><body><h2>Welcome to Azure! My name is my-vm.</h2></body></html>
     ```
 2.  As an optional step, refresh your browser tab that points to your web server. You see the home page:
-    
-    :::image type="content" source="../media/browser-request-successful-df21c6f1.png" alt-text="A screenshot of a web browser showing the home page from the web server. The home page displays a welcome message.":::
-    
 
 Nice work. In practice, you can create a standalone network security group that includes the inbound and outbound network access rules you need. If you have multiple VMs that serve the same purpose, you can assign that NSG to each VM at the time you create it. This technique enables you to control network access to multiple VMs under a single, central set of rules.
 
