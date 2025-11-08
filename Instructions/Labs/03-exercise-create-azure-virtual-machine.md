@@ -1,6 +1,21 @@
-In this exercise, you create an Azure virtual machine (VM) and install a web server (Nginx).
+---
+lab:
+    title: 'Exercise - Create an virtual machine and configure as a web host'
+    module: 'Module 01 - Describe the core architectural components of Azure'
+---
+<!--
+Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
+You can delete the module and edit index.md in the root of the repo to customize the display so that only the exercises are listed
+To enable GitHub page publishing, edit the Page settings for the repo and publish from the main branch
+-->
 
-You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM) template.
+# Create an virtual machine and configure as a web host <!-- match title in metadata above (and Learn Exercise unit and ILT slide)-->
+
+In this exercise, you create an Azure virtual machine (VM), install a web server, and upate the network configuration to allow access from the internet.
+
+This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
+
+You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM) template to complete the steps in this exercise. To help you gain familiarity with the Azure CLI, that's the method used in this exercise.
 
 In this instance, you're going to use the Azure CLI.
 
@@ -28,7 +43,7 @@ In this instance, you're going to use the Azure CLI.
       --generate-ssh-keys    
     ```
     
-    Your VM takes a few moments to come up. You named the VM **my-vm**. You use this name to refer to the VM in later steps.
+    Your VM may take a few moments to provision. You named the VM **my-vm**, and will refer to the VM later based on that name.
 
 ## Task 3: Install Nginx
 After your VM is created, you'll use a Custom Script Extension to install Nginx. The Custom Script Extension is an easy way to download and run scripts on your Azure VMs. It's just one of the many ways you can configure the system after your VM is up and running.
