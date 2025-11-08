@@ -9,7 +9,7 @@ You can delete the module and edit index.md in the root of the repo to customize
 To enable GitHub page publishing, edit the Page settings for the repo and publish from the main branch
 -->
 
-# Create an virtual machine and configure as a web host <!-- match title in metadata above (and Learn Exercise unit and ILT slide)-->
+# Create a storage blob <!-- match title in metadata above (and Learn Exercise unit and ILT slide)-->
 
 In this exercise, you create an Azure storage container, upload a file to blob storage, and then configure blob storage to allow access to the file.
 
