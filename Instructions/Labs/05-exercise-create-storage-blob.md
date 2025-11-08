@@ -1,4 +1,22 @@
-## Create a storage account
+---
+lab:
+    title: 'Exercise - Create a storage blob'
+    module: 'Module 01 - Describe the core architectural components of Azure'
+---
+<!--
+Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
+You can delete the module and edit index.md in the root of the repo to customize the display so that only the exercises are listed
+To enable GitHub page publishing, edit the Page settings for the repo and publish from the main branch
+-->
+
+# Create an virtual machine and configure as a web host <!-- match title in metadata above (and Learn Exercise unit and ILT slide)-->
+
+In this exercise, you create an Azure storage container, upload a file to blob storage, and then configure blob storage to allow access to the file.
+
+This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
+
+
+## Task 1: Create a storage account <!-- Change to an appropriate task title with an imperative verb phrase (e.g. "Do something") -->
 
 In this task, you'll create a new storage account.
 
@@ -16,6 +34,7 @@ In this task, you'll create a new storage account.
     | Region               | Leave default                                                |
     | Performance          | Standard                                                     |
     | Redundancy           | Locally redundant storage (LRS)                              |
+
 6.  On the **Advanced** tab of the Create a storage account blade, fill in the following information. Leave the defaults for everything else.
     
     | **Setting**                                              | **Value** |
@@ -26,7 +45,7 @@ In this task, you'll create a new storage account.
 8.  Once validated, select **Create**. Wait for the notification that the account was successfully created.
 9.  Select **Go to resource**.
 
-## Work with blob storage
+## Task 2: Work with blob storage
 
 In this section, you'll create a Blob container and upload a picture.
 
@@ -57,7 +76,7 @@ In this section, you'll create a Blob container and upload a picture.
     </Error>    
     ```
 
-## Change the access level of your blob
+## Task 3: Change the access level of your blob
 
 1.  Go back to the Azure portal.
 2.  Select Change access level.
@@ -67,7 +86,7 @@ In this section, you'll create a Blob container and upload a picture.
 
 Congratulations - you've completed this exercise. You created a storage account, added a container to the storage account, and then uploaded blobs (files) to your container. Then you changed the access level so you could access your file from the internet.
 
-## Clean up
+## Task 4: Clean up
 
 To clean up the assets created in this exercise and avoid unnecessary costs, delete the resource group (and all associated resources).
 1. From the Azure home page, under Azure services, select **Resource groups**.
