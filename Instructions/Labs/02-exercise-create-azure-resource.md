@@ -13,7 +13,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 In this exercise, you’ll use the Azure portal to create a resource. The focus of the exercise is observing how Azure resource groups populate with created resources.
 
-This exercise should take approximately **5** minutes to complete. <!-- update with estimated duration -->
+This exercise should take approximately **10** minutes to complete. <!-- update with estimated duration -->
 
 ## Task 1: Create a resource group
 In this task, you'll create a resource group. By creating a resource group for this exercise, it will make it easier to clean up the exercise when you're complete.
