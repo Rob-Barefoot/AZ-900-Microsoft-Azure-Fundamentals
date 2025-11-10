@@ -13,7 +13,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 In this exercise, you create an Azure virtual machine (VM), install a web server, and upate the network configuration to allow access from the internet.
 
-This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
+This exercise should take approximately **20** minutes to complete. <!-- update with estimated duration -->
 
 You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM) template to complete the steps in this exercise. To help you gain familiarity with the Azure CLI, that's the method used in this exercise.
 
@@ -24,7 +24,7 @@ In this instance, you're going to use the Azure CLI.
 1. Select the Azure Cloud Shell icon to bring up Cloud Shell.
 1. From the Azure CLI, create a resource group named **IntroAzureRG**.
     ```azurecli
-    az group create --name IntroAzureRG --location eastus
+    az group create --name IntroAzureRG --location westus
     ```
 
 ## Task 2: Create a Linux virtual machine
@@ -111,8 +111,9 @@ In this procedure, you get the IP address for your VM and attempt to access your
         You see an IP address, for example, *23.102.42.235*.
     2.  Copy the IP address that you see to the clipboard.
     3.  Open a new browser tab and go to your web server. After a few moments, you see that the connection isn't happening. If you wait for the browser to time out, you see something like this:
-        
-    4.  Keep this browser tab open for later.
+
+        ![Screenshot of a web browser showing an error message that says the connection timed out.](/media/browser-request-timeout-d7cc0e02.png)
+    5.  Keep this browser tab open for later.
 
 ## Task 5: List the current network security group rules
 
@@ -221,6 +222,8 @@ Now that you configured network access to port 80, let's try to access the web s
     <html><body><h2>Welcome to Azure! My name is my-vm.</h2></body></html>
     ```
 2.  As an optional step, refresh your browser tab that points to your web server. You see the home page:
+
+   ![A screenshot of a web browser showing the home page from the web server. The home page displays a welcome message.](/media/browser-request-successful-df21c6f1.png)
 
 Nice work. In practice, you can create a standalone network security group that includes the inbound and outbound network access rules you need. If you have multiple VMs that serve the same purpose, you can assign that NSG to each VM at the time you create it. This technique enables you to control network access to multiple VMs under a single, central set of rules.
 
