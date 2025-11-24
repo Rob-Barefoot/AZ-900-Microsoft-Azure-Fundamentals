@@ -15,16 +15,18 @@ In this exercise, you create an Azure virtual machine (VM), install a web server
 
 This exercise should take approximately **20** minutes to complete. <!-- update with estimated duration -->
 
-You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM) template to complete the steps in this exercise. To help you gain familiarity with the Azure CLI, that's the method used in this exercise.
+You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM) template to complete the steps in this exercise.
 
 In this instance, you're going to use the Azure CLI.
 
 ## Task 1: Create a resource group
+The very first task has you create a resource group in the West US region. Everything else created during this lab will be created within that resource group.
+
 1. Log into the [Azure portal](https://portal.azure.com/?azure-portal=true).
 1. Select the Azure Cloud Shell icon to bring up Cloud Shell.
 1. From the Azure CLI, create a resource group named **IntroAzureRG**.
     ```azurecli
-    az group create --name IntroAzureRG --location westus
+    az group create --name IntroAzureRG --location centralus
     ```
 
 ## Task 2: Create a Linux virtual machine
@@ -233,4 +235,6 @@ You've completed this exercise and all of the exercises for this module. To clea
 1. From the Azure home page, under Azure services, select **Resource groups**.
 1. Select the **IntroAzureRG** resource group.
 1. Select **Delete resource group**.
-1. Enter `IntroAzureRG` to confirm deletion of the resource group and select delete.
+1. Ensure the **Apply force delete for selected Virtal machines and Virtual machine scale sets** box is checked.
+1. Enter `IntroAzureRG` to confirm deletion of the resource group
+1. On the confirmation window, select **Delete**.
