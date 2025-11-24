@@ -54,24 +54,24 @@ In order to apply a resource lock, you have to have a resource created in Azure.
 In this task you apply a read-only resource lock to the storage account. What impact do you think that has on the storage account?
 
 1.  Scroll down until you find the Settings section of the blade on the left of the screen.
-2.  Select Locks.
-3.  Select + Add.
+2.  Select **Locks**.
+3.  Select **+ Add**.
 ![Screenshot of the Add lock feature on a storage account set for a read-only lock.](/media/read-only-lock-e7777623-da42899c.png)
 
 4.  Enter a Lock name.
 5.  Verify the Lock type is set to Read-only.
-6.  Select OK.
+6.  Select **OK**.
 
 ## Task 4: Add a container to the storage account
 
 In this task, you add a container to the storage account. This container is where you can store your blobs.
 
 1.  Scroll up until you find the Data storage section of the blade on the left of the screen.
-2.  Select Containers.
-3.  Select + Container.
+2.  Select **Containers**.
+3.  Select **+ Container**.
 ![Screenshot of the add container process outlined in this task.](/media/add-container-steps-a6739e88-0c5e4c13.png)
 
-4.  Enter a container name and select Create.
+4.  Enter a container name and select **Create**.
 5.  You should receive an error message: Failed to create storage container.
 ![Screenshot of the Failed to create storage container error message.](/media/failed-create-warning-291af699-381fe98b.png)
 
@@ -81,15 +81,15 @@ In this task, you add a container to the storage account. This container is wher
 ## Task 5: Modify the resource lock and create a storage container
 
 1.  Scroll down until you find the Settings section of the blade on the left of the screen.
-2.  Select Locks.
+2.  Select **Locks**.
 3.  Select the read-only resource lock you created.
-4.  Change the Lock type to Delete and select OK.
+4.  Change the Lock type to Delete and select **OK**.
 ![Screenshot midway through task process of changing the lock type on a resource lock.](/media/resource-lock-change-e5281189-aa175b31.png)
 
 5.  Scroll up until you find the Data storage section of the blade on the left of the screen.
-6.  Select Containers.
-7.  Select + Container.
-8.  Enter a container name and select Create.
+6.  Select **Containers**.
+7.  Select **+ Container**.
+8.  Enter a container name and select **Create**.
 9.  Your storage container should appear in your list of containers.
 
 You can now understand how the read-only lock prevented you from adding a container to your storage account. Once the lock type was changed (you could have removed it instead), you were able to add a container.
@@ -99,8 +99,8 @@ You can now understand how the read-only lock prevented you from adding a contai
 You'll actually do this last task twice. Remember that there's a delete lock on the storage account, so you won't actually be able to delete the storage account yet.
 
 1.  Scroll up until you find Overview at the top of the blade on the left of the screen.
-2.  Select Overview.
-3.  Select Delete.
+2.  Select **Overview**.
+3.  Select **Delete**.
 ![Screenshot of the deletion process for deleting a storage account.](/media/storage-overview-page-ec75f9e6-e8e8a7d4.png)    
 
 You should get a notification letting you know you can't delete the resource because it has a delete lock. In order to delete the storage account, you need to remove the delete lock.
@@ -112,13 +112,13 @@ In the final task, you remove the resource lock and delete the storage account f
 
 1.  Select your storage account name in the breadcrumb at the top of the screen.
 2.  Scroll down until you find the Settings section of the blade on the left of the screen.
-3.  Select Locks.
-4.  Select Delete.
-5.  Select Home in the breadcrumb at the top of the screen.
-6.  Select Storage accounts
+3.  Select **Locks**.
+4.  Select **Delete**.
+5.  Select **Home** in the breadcrumb at the top of the screen.
+6.  Select **Storage accounts**.
 7.  Select the storage account you used for this exercise.
-8.  Select Delete.
-9.  To prevent accidental deletion, Azure prompts you to enter the name of the storage account you want to delete. Enter the name of the storage account and select Delete.
+8.  Select **Delete**.
+9.  To prevent accidental deletion, Azure prompts you to enter the name of the storage account you want to delete. Enter the name of the storage account and select **Delete**.
 ![Screenshot of the deletion confirmation message before deleting a storage account.](/media/storage-account-delete-f4d60c3b-65598364.png)
 
 10. You should receive a message that the storage account was deleted. If you go Home &gt; Storage accounts, you should see that the storage account you created for this exercise is gone.
