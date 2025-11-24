@@ -13,7 +13,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 In this exercise, you’ll use the Azure portal to create a resource. The focus of the exercise is observing how Azure resource groups populate with created resources.
 
-This exercise should take approximately **10** minutes to complete. <!-- update with estimated duration -->
+This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
 
 ## Task 1: Create a resource group
 In this task, you'll create a resource group. By creating a resource group for this exercise, it will make it easier to clean up the exercise when you're complete.
@@ -22,17 +22,21 @@ In this task, you'll create a resource group. By creating a resource group for t
 1. Select **Resource groups**.
 1. Select **Create**.
 1. Select the subscription you will use for this exercise from the **Subscription** dropdown list.
-1. Enter **IntroAzureRG** for the resource group name.
+1. Enter `IntroAzureRG` for the resource group name.
 1. Select **Central US** as the region.
+1. Select **Review + create**.
+1. Select **Create**.
+1. Select **Home** to return to the Azure portal home screen.
 
 ## Task 2: Create a virtual machine
 
 In this task, you’ll create a virtual machine using the Azure portal.
 
-1.  Sign in to the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
-2.  Select Create a resource &gt; Compute &gt; Virtual Machine &gt; Create.
-3.  The Create a virtual machine pane opens to the basics tab.
-4.  Verify or enter the following values for each setting. If a setting isn’t specified, leave the default value.
+1. Select **Create a resource**.
+1. Select **Infrastructure services** from the Categories menu.
+1. Select **Create** under the virtual machine heading.
+1. The Create a virtual machine pane opens to the basics tab.
+1. Verify or enter the following values for each setting. If a setting isn’t specified, leave the default value.
     
     **Basics tab**
     
@@ -40,7 +44,7 @@ In this task, you’ll create a virtual machine using the Azure portal.
     | ---------------------------- | ---------------------------------------------------------- |
     | Subscription                 | Select the subscription you selected in Task 1.            |
     | Resource group               | IntroAzureRG                                               |
-    | Virtual machine name         | my-VM                                                      |
+    | Virtual machine name         | `my-VM`                                                    |
     | Region                       | Leave default                                              |
     | Availability options         | Leave default                                              |
     | Security type                | Leave default                                              |
@@ -49,14 +53,13 @@ In this task, you’ll create a virtual machine using the Azure portal.
     | Run with Azure Spot discount | Unchecked                                                  |
     | Size                         | Leave default                                              |
     | Authentication type          | Password                                                   |
-    | Username                     | azureuser                                                  |
+    | Username                     | `azureuser`                                                |
     | Password                     | Enter a custom password                                    |
     | Confirm password             | Reenter the custom password                                |
     | Public inbound ports         | None                                                       |
 
-5.  Select Review and Create.
-
-6.  Select Create
+6.  Select **Review and Create**.
+6.  **Select Create**.
 
 Wait while the VM is provisioned. Deployment is in progress will change to Deployment is complete when the VM is ready.
 
@@ -76,4 +79,7 @@ Congratulations! You've created a resource in Azure and had a chance to see how 
 1. From the Azure home page, under Azure services, select **Resource groups**.
 1. Select the **IntroAzureRG** resource group.
 1. Select **Delete resource group**.
-1. Enter `IntroAzureRG` to confirm deletion of the resource group and select delete.
+1. Ensure **Apply force delete for seleted Virtual machines and Virtual machine scale sets** is checked.
+1. Enter `IntroAzureRG` to confirm deletion of the resource group.
+1. Select **Delete**.
+1. On the Delete confirmation pop-up window, select **Delete**.
