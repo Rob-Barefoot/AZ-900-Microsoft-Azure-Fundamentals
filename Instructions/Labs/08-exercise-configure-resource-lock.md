@@ -22,19 +22,21 @@ In this task, you'll create a resource group. By creating a resource group for t
 1. Select **Resource groups**.
 1. Select **Create**.
 1. Select the subscription you will use for this exercise from the **Subscription** dropdown list.
-1. Enter **IntroAzureRG** for the resource group name.
+1. Enter ```IntroAzureRG``` for the resource group name.
 1. Select **Central US** as the region.
+1. Select **Review + create**.
+1. Select **Create**.
+1. Select **Home**.
 
 
 ## Task 2: Create a resource
 
 In order to apply a resource lock, you have to have a resource created in Azure. The first task focuses on creating a resource that you can then lock in subsequent tasks.
 
-1.  Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com/?azure-portal=true)
-2.  Select **Create a resource**.
-3.  Under Categories, select **Storage**.
-4.  Under Storage Account, select **Create**.
-5.  On the Basics tab of the Create storage account blade, fill in the following information. Leave the defaults for everything else.
+1.  Select **Create a resource**.
+1.  Under Categories, select **Infrastructure Services**.
+1.  Under Storage Account, select **Create**.
+1.  On the Basics tab of the Create storage account blade, fill in the following information. Leave the defaults for everything else.
     
     | **Setting**          | **Value**                           |
     | -------------------- | ----------------------------------- |
@@ -43,9 +45,9 @@ In order to apply a resource lock, you have to have a resource created in Azure.
     | Location             | default                             |
     | Performance          | Standard                            |
     | Redundancy           | Locally redundant storage (LRS)     |
-6.  Select **Review + Create** to review your storage account settings and allow Azure to validate the configuration.
-7.  Once validated, select **Create**. Wait for the notification that the account was successfully created.
-8.  Select **Go to resource**.
+5.  Select **Review + Create** to review your storage account settings and allow Azure to validate the configuration.
+5.  Once validated, select **Create**. Wait for the notification that the account was successfully created.
+5.  Select **Go to resource**.
 
 ## Task 3: Apply a read-only resource lock
 
@@ -127,6 +129,7 @@ To clean up the assets created in this exercise and avoid unnecessary costs, del
 1. From the Azure home page, under Azure services, select **Resource groups**.
 1. Select the **IntroAzureRG** resource group.
 1. Select **Delete resource group**.
-1. Enter `IntroAzureRG` to confirm deletion of the resource group and select delete.
+1. Enter `IntroAzureRG` to confirm deletion of the resource group and select **Delete**.
+1. Select **Delete** on the confirmation window.
 
 Congratulations! You've completed configuring, updating, and removing a resource lock on an Azure resource.
