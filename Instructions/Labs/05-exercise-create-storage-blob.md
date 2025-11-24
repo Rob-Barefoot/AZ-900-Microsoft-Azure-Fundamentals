@@ -29,7 +29,7 @@ In this task, you'll create a new storage account.
     | **Setting**          | **Value**                                                    |
     | -------------------- | ------------------------------------------------------------ |
     | Subscription         | Select the subscription you want to use for the exercise.    |
-    | Resource group       | Select Create new and enter `IntroAzureRG` and select OK     |
+    | Resource group       | Select Create new and enter ```IntroAzureRG``` and select OK     |
     | Storage account name | Create a unique storage account name                         |
     | Region               | Leave default                                                |
     | Performance          | Standard                                                     |
@@ -43,7 +43,7 @@ In this task, you'll create a new storage account.
 
     ![Screenshot showing how to enable anonymous-access containers on a storage account.](/media/storage-account-anonymous-containers.png)
      
-7.  Select **Review** to review your storage account settings and allow Azure to validate the configuration.
+7.  Select **Review + create** to review your storage account settings and allow Azure to validate the configuration.
 8.  Once validated, select **Create**. Wait for the notification that the account was successfully created.
 9.  Select **Go to resource**.
 
@@ -55,7 +55,7 @@ In this section, you'll create a Blob container and upload a picture.
 
     ![Screenshot of the Container add section of a storage account.](/media/storage-account-menu.png)
 
-2.  Select **+ Container** and complete the information.
+2.  Select **+ Add container** and complete the information.
     
     | **Setting**            | **Value**                      |
     | ---------------------- | ------------------------------ |
@@ -64,7 +64,7 @@ In this section, you'll create a Blob container and upload a picture.
 3.  Select Create.
     
     > [!NOTE]
-    > Step 4 will need an image. If you want to upload an image you already have on your computer, continue to Step 4. Otherwise, open a new browser window and search Bing for an image of a flower. Save the image to your computer.
+    > Step 4 will need an image. If you want to upload an image you already have on your computer, continue to Step 4. Otherwise, open a new browser window and search Bing for an image and save the image to your computer.
 4.  Back in the Azure portal, select the container you created, then select Upload.
 5.  Browse for the image file you want to upload. Select it and then select upload.
     
@@ -93,11 +93,12 @@ In this section, you'll create a Blob container and upload a picture.
 
 Congratulations - you've completed this exercise. You created a storage account, added a container to the storage account, and then uploaded blobs (files) to your container. Then you changed the access level so you could access your file from the internet.
 
-## Task 4: Clean up
-
-To clean up the assets created in this exercise and avoid unnecessary costs, delete the resource group (and all associated resources).
+## Clean up
 1. From the Azure home page, under Azure services, select **Resource groups**.
 1. Select the **IntroAzureRG** resource group.
 1. Select **Delete resource group**.
-1. Enter `IntroAzureRG` to confirm deletion of the resource group and select delete.
+1. Enter `IntroAzureRG` to confirm deletion of the resource group
+1. Select **Delete**.
+1. On the confirmation window, select **Delete**.
+
 
