@@ -1,8 +1,13 @@
 ---
 lab:
-    title: 'Exercise - Configure resource locks'
-    module: 'Module 02 - Describe features and tools in Azure for governance and compliance'
+  title: Exercise - Configure resource locks
+  module: Module 02 - Describe features and tools in Azure for governance and compliance
+  description: To clean up the assets created in this exercise and avoid unnecessary costs, delete the resource group (and all associated resources).
+  duration: 15 minutes
+  level: 200
+  islab: true
 ---
+
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
 You can delete the module and edit index.md in the root of the repo to customize the display so that only the exercises are listed
