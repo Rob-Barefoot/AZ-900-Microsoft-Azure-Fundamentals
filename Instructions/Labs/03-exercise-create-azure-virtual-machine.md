@@ -4,7 +4,7 @@ lab:
   module: Module 01 - Describe the core architectural components of Azure
   description: In this exercise, you create an Azure virtual machine (VM), install a web server, and update the network configuration to allow access from the internet.
   duration: 20 minutes
-  level: 400
+  level: 200
   islab: true
   primarytopics:
     - Azure

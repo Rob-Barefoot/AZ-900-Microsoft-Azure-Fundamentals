@@ -4,7 +4,7 @@ lab:
   module: Module 01 - Describe the core architectural components of Azure
   description: In this exercise, you create an Azure storage container, upload a file to blob storage, and then configure blob storage to allow access to the file.
   duration: 15 minutes
-  level: 200
+  level: 100
   islab: true
   primarytopics:
     - Azure

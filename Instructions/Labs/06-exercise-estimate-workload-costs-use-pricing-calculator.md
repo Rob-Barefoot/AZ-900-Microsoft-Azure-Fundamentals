@@ -4,7 +4,7 @@ lab:
   module: Module 04 - Describe cost management in Azure
   description: In this exercise, you’ll use the pricing calculator to estimate the cost of running different Azure workloads.
   duration: 15 minutes
-  level: 300
+  level: 100
   islab: true
   primarytopics:
     - Azure

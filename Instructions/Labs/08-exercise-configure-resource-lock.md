@@ -4,7 +4,7 @@ lab:
   module: Module 02 - Describe features and tools in Azure for governance and compliance
   description: You create and apply resource locks to prevent accidental deletion of Azure resources.
   duration: 15 minutes
-  level: 200
+  level: 100
   islab: true
   primarytopics:
     - Azure
