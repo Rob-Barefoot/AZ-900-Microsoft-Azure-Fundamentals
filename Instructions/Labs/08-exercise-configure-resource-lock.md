@@ -2,10 +2,13 @@
 lab:
   title: Exercise - Configure resource locks
   module: Module 02 - Describe features and tools in Azure for governance and compliance
-  description: To clean up the assets created in this exercise and avoid unnecessary costs, delete the resource group (and all associated resources).
+  description: You create and apply resource locks to prevent accidental deletion of Azure resources.
   duration: 15 minutes
   level: 200
   islab: true
+  primarytopics:
+    - Azure
+    - Resource Locks
 ---
 
 <!--

@@ -8,6 +8,7 @@ lab:
   islab: true
   primarytopics:
     - Azure
+    - Cost Management
 ---
 
 <!--
