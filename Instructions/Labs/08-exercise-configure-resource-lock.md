@@ -23,6 +23,10 @@ In this exercise, you use resource locks to prevent accidental deletion of a fil
 
 This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
 
+> [!IMPORTANT]
+> You'll need access to an Azure subscription with sufficient permissions to create a resource group, storage account, and resource lock to complete this exercise.
+> This exercise uses the **Central US** region.
+
 ## Task 1: Create a resource group
 In this task, you'll create a resource group. By creating a resource group for this exercise, it will make it easier to clean up the exercise when you're complete.
 
@@ -50,7 +54,7 @@ In order to apply a resource lock, you have to have a resource created in Azure.
     | -------------------- | ----------------------------------- |
     | Resource group       | Select **IntroAzureRG**             |
     | Storage account name | enter a unique storage account name |
-    | Location             | default                             |
+    | Location             | Central US (same as resource group) |
     | Performance          | Standard                            |
     | Redundancy           | Locally redundant storage (LRS)     |
 5.  Select **Review + Create** to review your storage account settings and allow Azure to validate the configuration.

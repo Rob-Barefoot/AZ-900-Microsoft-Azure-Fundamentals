@@ -23,40 +23,65 @@ In this exercise, you create an Azure virtual machine (VM), install a web server
 
 This exercise should take approximately **20** minutes to complete. <!-- update with estimated duration -->
 
+> [!IMPORTANT]
+> You'll need access to an Azure subscription with sufficient permissions to create a resource group, virtual machine, and networking resources to complete this exercise.
+
 You could use the Azure portal, the Azure CLI, or an Azure Resource Manager (ARM) template to complete the steps in this exercise.
 
-In this instance, you're going to use the Azure CLI.
+In this instance, you'll use the Azure portal to deploy the VM, and Azure CLI in Cloud Shell for configuration and networking tasks.
 
 ## Task 1: Create a resource group
-The very first task has you create a resource group in the West US region. Everything else created during this lab will be created within that resource group.
+The very first task has you create a resource group. Everything else created during this exercise will be created within that resource group.
 
 1. Log into the [Azure portal](https://portal.azure.com/?azure-portal=true).
-1. Select the Azure Cloud Shell icon to bring up Cloud Shell.
-1. From the Azure CLI, create a resource group named **IntroAzureRG**.
-    ```azurecli
-    az group create --name IntroAzureRG --location centralus
-    ```
+1. Select **Resource groups**.
+1. Select **Create**.
+1. Select the subscription you'll use for this exercise.
+1. Enter **IntroAzureRG** for the resource group name.
+1. For **Region**, select a region available to your subscription where D-series Linux VM sizes are available.
+1. Select **Review + create**, and then select **Create**.
 
 ## Task 2: Create a Linux virtual machine
-1. Use the following Azure CLI command to create a Linux VM.
+In this task, you use the Azure portal to create a Linux VM in the resource group from Task 1.
 
-1.  From Cloud Shell, run the following `az vm create` command to create a Linux VM:
-    
-    ```azurecli
-    az vm create \
-      --resource-group "IntroAzureRG" \
-      --name my-vm \
-      --size Standard_D2s_v5 \
-      --public-ip-sku Standard \
-      --image Ubuntu2204 \
-      --admin-username azureuser \
-      --generate-ssh-keys    
-    ```
-    
-    Your VM may take a few moments to provision. You named the VM **my-vm**, and will refer to the VM later based on that name.
+1. Select **Home**.
+1. Select **Create a resource**.
+1. Under Categories, select **Infrastructure services**.
+1. Under **Virtual machine**, select **Create**.
+1. On the **Basics** tab, use the following values and leave other settings at their defaults unless specified.
+
+    | **Setting**                  | **Value**                                       |
+    | ---------------------------- | ----------------------------------------------- |
+    | Subscription                 | Select the subscription you selected in Task 1. |
+    | Resource group               | IntroAzureRG                                    |
+    | Virtual machine name         | `my-vm`                                         |
+    | Region                       | Same as IntroAzureRG                            |
+    | Zone options                 | Leave default                                   |
+    | Availability zone            | Leave default                                   |
+    | Security type                | Leave default                                   |
+    | Image                        | Leave default                                   |
+    | VM architecture              | Leave default                                   |
+    | Run with Azure Spot discount | Unchecked                                       |
+    | Size                         | Leave default                                   |
+    | Authentication               | Password                                        |
+    | Username                     | `azureuser`                                     |
+    | Password                     | Enter a custom password                         |
+    | Confirm password             | Reenter the custom password                     |
+    | Public inbound ports         | None                                            |
+
+
+1. Select **Review + create**, then select **Create**.
+1. Wait for the VM deployment to complete.
+
+Your VM may take a few moments to provision. You named the VM **my-vm**, and will refer to the VM later based on that name.
+
+Wait until **Your deployment is complete.** before continuing.
 
 ## Task 3: Install Nginx
 After your VM is created, you'll use a Custom Script Extension to install Nginx. The Custom Script Extension is an easy way to download and run scripts on your Azure VMs. It's just one of the many ways you can configure the system after your VM is up and running.
+
+1. Select the Azure Cloudshell icon to bring up Azure cloudshell.
+1. Verify that you are in BASH mode instead of PowerShell mode. If you're unsure, enter `bash` on the Azure Cloudshell commandline.
 
 1. Run the following `az vm extension set` command to configure Nginx on your VM:
     
@@ -129,28 +154,25 @@ In this procedure, you get the IP address for your VM and attempt to access your
 
 Your web server wasn't accessible. To find out why, let's examine your current NSG rules.
 
-1.  Run the following `az network nsg list` command to list the network security groups that are associated with your VM:
-    
-    ```azurecli
-    az network nsg list \
+1.  Run the following commands to find the NSG associated with **my-vm** and store the NSG name in a Bash variable:
+
+    ```bash
+    NSGID="$(az network nic list \
       --resource-group "IntroAzureRG" \
-      --query '[].name' \
-      --output tsv    
+      --query "[?virtualMachine.id && contains(virtualMachine.id, '/my-vm')].networkSecurityGroup.id | [0]" \
+      --output tsv)"
+
+    NSGNAME="${NSGID##*/}"
+    echo $NSGNAME
     ```
-    
-    You see this output:
-    
-    ```output
-    my-vmNSG
-    ```
-    
-    Every VM on Azure is associated with at least one network security group. In this case, Azure created an NSG for you called *my-vmNSG*.
-2.  Run the following `az network nsg rule list` command to list the rules associated with the NSG named *my-vmNSG*:
+
+    You see an NSG name in the output, for example *my-vmNSG* or *my-vm-nsg*.
+2.  Run the following `az network nsg rule list` command to list the rules associated with the NSG named in `$NSGNAME`:
     
     ```azurecli
     az network nsg rule list \
       --resource-group "IntroAzureRG" \
-      --nsg-name my-vmNSG    
+      --nsg-name "$NSGNAME"    
     ```
     
     You see a large block of text in JSON format in the output. In the next step, you'll run a similar command that makes this output easier to read.
@@ -159,7 +181,7 @@ Your web server wasn't accessible. To find out why, let's examine your current N
     ```azurecli
     az network nsg rule list \
       --resource-group "IntroAzureRG" \
-      --nsg-name my-vmNSG \
+      --nsg-name "$NSGNAME" \
       --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' \
       --output table    
     ```
@@ -185,7 +207,7 @@ Here, you create a network security rule that allows inbound access on port 80 (
     ```azurecli
     az network nsg rule create \
       --resource-group "IntroAzureRG" \
-      --nsg-name my-vmNSG \
+      --nsg-name "$NSGNAME" \
       --name allow-http \
       --protocol tcp \
       --priority 100 \
@@ -199,7 +221,7 @@ Here, you create a network security rule that allows inbound access on port 80 (
     ```azurecli
     az network nsg rule list \
       --resource-group "IntroAzureRG" \
-      --nsg-name my-vmNSG \
+      --nsg-name "$NSGNAME" \
       --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' \
       --output table    
     ```
@@ -243,6 +265,6 @@ You've completed this exercise and all of the exercises for this module. To clea
 1. From the Azure home page, under Azure services, select **Resource groups**.
 1. Select the **IntroAzureRG** resource group.
 1. Select **Delete resource group**.
-1. Ensure the **Apply force delete for selected Virtal machines and Virtual machine scale sets** box is checked.
+1. If present, ensure the **Apply force delete for selected Virtal machines and Virtual machine scale sets** box is checked.
 1. Enter `IntroAzureRG` to confirm deletion of the resource group
 1. On the confirmation window, select **Delete**.

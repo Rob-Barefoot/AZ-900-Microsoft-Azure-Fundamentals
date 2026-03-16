@@ -23,6 +23,10 @@ In this exercise, you create an Azure storage container, upload a file to blob s
 
 This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
 
+> [!IMPORTANT]
+> You'll need access to an Azure subscription with sufficient permissions to create a resource group, storage account, and blob container to complete this exercise.
+> If your environment limits regions, choose an allowed region when you create the storage account.
+
 
 ## Task 1: Create a storage account <!-- Change to an appropriate task title with an imperative verb phrase (e.g. "Do something") -->
 
@@ -34,14 +38,14 @@ In this task, you'll create a new storage account.
 4.  Under Storage account, select **Create**.
 5.  On the **Basics** tab of the Create a storage account blade, fill in the following information. Leave the defaults for everything else.
     
-    | **Setting**          | **Value**                                                    |
-    | -------------------- | ------------------------------------------------------------ |
-    | Subscription         | Select the subscription you want to use for the exercise.    |
-    | Resource group       | Select Create new and enter ```IntroAzureRG``` and select OK     |
-    | Storage account name | Create a unique storage account name                         |
-    | Region               | Leave default                                                |
-    | Performance          | Standard                                                     |
-    | Redundancy           | Locally redundant storage (LRS)                              |
+    | **Setting**          | **Value**                                                 |
+    | -------------------- | --------------------------------------------------------- |
+    | Subscription         | Select the subscription you want to use for the exercise. |
+    | Resource group       | Select Create new and enter `IntroAzureRG` and select OK  |
+    | Storage account name | Create a unique storage account name                      |
+    | Region               | Select the same region as IntroAzureRG                    |
+    | Performance          | Standard                                                  |
+    | Redundancy           | Locally redundant storage (LRS)                           |
 
 6.  On the **Advanced** tab of the Create a storage account blade, fill in the following information. Leave the defaults for everything else.
     
@@ -91,13 +95,14 @@ In this section, you'll create a Blob container and upload a picture.
 ## Task 3: Change the access level of your blob
 
 1.  Go back to the Azure portal.
-2.  Select Change access level.
-3.  Set the Anonymous access level to Blob (anonymous read access for blobs only).
+2.  If needed, use the breadcrumb to return to the container you created in Task 2.
+3.  Select **Change access level**.
+4.  Set the Anonymous access level to Blob (anonymous read access for blobs only).
 
 ![Screenshot with Change access level highlighted.](./Media/blob-access-level.png)
 
-4.  Select OK.
-5.  Refresh the tab where you attempted to access the file earlier.
+5.  Select OK.
+6.  Refresh the tab where you attempted to access the file earlier.
 
 Congratulations - you've completed this exercise. You created a storage account, added a container to the storage account, and then uploaded blobs (files) to your container. Then you changed the access level so you could access your file from the internet.
 
