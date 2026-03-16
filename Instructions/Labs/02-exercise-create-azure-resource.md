@@ -2,7 +2,7 @@
 lab:
   title: Exercise - Create an Azure resource
   module: Module 01 - Describe the core architectural components of Azure
-  description: In this exercise, you’ll use the Azure portal to create a resource. The focus of the exercise is observing how Azure resource groups populate with created resources.
+  description: In this exercise, you'll use the Azure portal to create a resource. The focus of the exercise is observing how Azure resource groups populate with created resources.
   duration: 15 minutes
   level: 100
   islab: true
@@ -23,6 +23,9 @@ In this exercise, you’ll use the Azure portal to create a resource. The focus 
 
 This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
 
+> [!IMPORTANT]
+> You'll need access to an Azure subscription with sufficient permissions to create a resource group and a virtual machine to complete this exercise.
+
 ## Task 1: Create a resource group
 In this task, you'll create a resource group. By creating a resource group for this exercise, it will make it easier to clean up the exercise when you're complete.
 
@@ -31,7 +34,7 @@ In this task, you'll create a resource group. By creating a resource group for t
 1. Select **Create**.
 1. Select the subscription you will use for this exercise from the **Subscription** dropdown list.
 1. Enter `IntroAzureRG` for the resource group name.
-1. Select **Central US** as the region.
+1. Select a region that is available in your subscription or course environment.
 1. Select **Review + create**.
 1. Select **Create**.
 1. Select **Home** to return to the Azure portal home screen.
@@ -48,23 +51,24 @@ In this task, you’ll create a virtual machine using the Azure portal.
     
     **Basics tab**
     
-    | **Setting**                  | **Value**                                                  |
-    | ---------------------------- | ---------------------------------------------------------- |
-    | Subscription                 | Select the subscription you selected in Task 1.            |
-    | Resource group               | IntroAzureRG                                               |
-    | Virtual machine name         | `my-VM`                                                    |
-    | Region                       | Leave default                                              |
-    | Availability options         | Leave default                                              |
-    | Security type                | Leave default                                              |
-    | Image                        | Leave default                                              |
-    | VM architecture              | Leave default                                              |
-    | Run with Azure Spot discount | Unchecked                                                  |
-    | Size                         | Leave default                                              |
-    | Authentication type          | Password                                                   |
-    | Username                     | `azureuser`                                                |
-    | Password                     | Enter a custom password                                    |
-    | Confirm password             | Reenter the custom password                                |
-    | Public inbound ports         | None                                                       |
+    | **Setting**                  | **Value**                                       |
+    | ---------------------------- | ----------------------------------------------- |
+    | Subscription                 | Select the subscription you selected in Task 1. |
+    | Resource group               | IntroAzureRG                                    |
+    | Virtual machine name         | `my-vm`                                         |
+    | Region                       | Same as IntroAzureRG                            |
+    | Zone options                 | Leave default                                   |
+    | Availability zone            | Leave default                                   |
+    | Security type                | Leave default                                   |
+    | Image                        | Leave default                                   |
+    | VM architecture              | Leave default                                   |
+    | Run with Azure Spot discount | Unchecked                                       |
+    | Size                         | Leave default                                   |
+    | Authentication               | Password                                        |
+    | Username                     | `azureuser`                                     |
+    | Password                     | Enter a custom password                         |
+    | Confirm password             | Reenter the custom password                     |
+    | Public inbound ports         | None                                            |
 
 6.  Select **Review and Create**.
 6.  **Select Create**.
@@ -87,7 +91,7 @@ Congratulations! You've created a resource in Azure and had a chance to see how 
 1. From the Azure home page, under Azure services, select **Resource groups**.
 1. Select the **IntroAzureRG** resource group.
 1. Select **Delete resource group**.
-1. Ensure **Apply force delete for seleted Virtual machines and Virtual machine scale sets** is checked.
+1. If present, Ensure **Apply force delete for selected Virtual machines and Virtual machine scale sets** is checked.
 1. Enter `IntroAzureRG` to confirm deletion of the resource group.
 1. Select **Delete**.
 1. On the Delete confirmation pop-up window, select **Delete**.

@@ -2,7 +2,7 @@
 lab:
   title: Exercise - Estimate workload costs by using the Pricing calculator
   module: Module 04 - Describe cost management in Azure
-  description: In this exercise, you’ll use the pricing calculator to estimate the cost of running different Azure workloads.
+  description: In this exercise, you'll use the pricing calculator to estimate the cost of running different Azure workloads.
   duration: 15 minutes
   level: 100
   islab: true
@@ -21,7 +21,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 In this exercise, you’ll use the pricing calculator to estimate the cost of running different Azure workloads.
 
-This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->---
+This exercise should take approximately **15** minutes to complete. <!-- update with estimated duration -->
 
 In this exercise, you use the Pricing calculator to estimate the cost of running a basic web application on Azure.
 
